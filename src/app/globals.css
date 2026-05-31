@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #05070D;
+  --color-foreground: #F8FAFC;
+  --color-kik-bg: #05070D;
+  --color-kik-primary: #0A1A3A;
+  --color-kik-navy: #071120;
+  --color-kik-accent: #2563EB; /* Royal Blue */
+  --color-kik-cyan: #3B82F6;   /* Blended Cyan-Blue Accent */
+  --color-kik-text: #F8FAFC;
+  --color-kik-muted: #94A3B8;
+  
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-inter);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom thin scrollbars for premium dashboard look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05070D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-kik-accent);
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .glass-nav {
+    background-color: rgba(5, 7, 13, 0.6);
+    backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .sidebar-glass {
+    background-color: rgba(5, 7, 13, 0.6);
+    backdrop-filter: blur(32px);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .text-glow {
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
+  }
+  .royal-glow {
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.15);
+  }
+}
+
+@keyframes scaleSlow {
+  0% { transform: scale(1.02); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1.02); }
+}
+
+.animate-scale-slow {
+  animation: scaleSlow 25s ease-in-out infinite;
+}
