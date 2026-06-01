@@ -55,7 +55,12 @@ export default function AppLayoutWrapper({ children }: { children: React.ReactNo
 
       {/* 2. Main Application Layout (renders once splash screen finishes fading) */}
       {!splashActive && (
-        <div className="flex min-h-screen bg-[var(--color-kik-bg)] text-white overflow-hidden relative">
+        <div className="flex min-h-screen bg-[var(--color-kik-bg)] text-white overflow-hidden relative z-0">
+          
+          {/* Apple-Style Mesh Gradients (Cinematic & Prominent Backdrop blobs) */}
+          <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-br from-indigo-600/15 via-purple-600/5 to-transparent blur-[120px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '10s' }} />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-gradient-to-tl from-blue-600/15 via-cyan-600/5 to-transparent blur-[140px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '14s' }} />
+          <div className="absolute top-[40%] right-[10%] w-[40vw] h-[40vw] rounded-full bg-gradient-to-tr from-fuchsia-600/10 via-pink-600/3 to-transparent blur-[130px] pointer-events-none -z-10" />
           
           {/* A. Fixed Left-Sidebar Navigation Rail (Desktop with Collapse state) */}
           <aside 
@@ -116,20 +121,20 @@ export default function AppLayoutWrapper({ children }: { children: React.ReactNo
                       } ${
                         isActive 
                           ? 'text-white' 
-                          : 'text-gray-400 hover:text-white'
+                          : 'text-white/40 hover:text-white'
                       }`}
                       title={isCollapsed ? link.name : undefined}
                     >
-                      {/* Active Indicator Glow Pill (Framer Motion layouts glide between links!) */}
+                      {/* Active Indicator (Framer Motion layouts glide between links!) */}
                       {isActive && (
                         <motion.div
                           layoutId="active-nav-pill"
-                          className="absolute inset-0 bg-blue-600/10 border border-blue-500/20 rounded-xl -z-10"
+                          className="absolute inset-0 bg-white/10 border border-white/10 rounded-xl -z-10 animate-fade-in"
                           transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                         />
                       )}
                       
-                      <Icon className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 group-hover:scale-110 ${isActive ? 'text-[var(--color-kik-accent)]' : 'text-gray-400 group-hover:text-white'}`} />
+                      <Icon className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 group-hover:scale-110 ${isActive ? 'text-white' : 'text-white/40 group-hover:text-white'}`} />
                       
                       {!isCollapsed && (
                         <span className="tracking-wide whitespace-nowrap overflow-hidden">
@@ -193,11 +198,11 @@ export default function AppLayoutWrapper({ children }: { children: React.ReactNo
                             href={link.path}
                             className={`relative flex items-center gap-4 px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
                               isActive 
-                                ? 'text-white bg-blue-600/10 border border-blue-500/20' 
-                                : 'text-gray-400 hover:text-white'
+                                ? 'text-white bg-white/10 border border-white/10' 
+                                : 'text-white/40 hover:text-white'
                             }`}
                           >
-                            <Icon className={`w-5 h-5 ${isActive ? 'text-[var(--color-kik-accent)]' : 'text-gray-400'}`} />
+                            <Icon className={`w-5 h-5 ${isActive ? 'text-white' : 'text-white/40'}`} />
                             <span>{link.name}</span>
                           </Link>
                         );
