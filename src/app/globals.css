@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #05070D;
+  --color-background: #08080A;
   --color-foreground: #F8FAFC;
-  --color-kik-bg: #05070D;
-  --color-kik-primary: #0A1A3A;
-  --color-kik-navy: #071120;
+  --color-kik-bg: #08080A;
+  --color-kik-primary: #0A0A0E;
+  --color-kik-navy: #08080A;
   --color-kik-accent: #2563EB; /* Royal Blue */
   --color-kik-cyan: #3B82F6;   /* Blended Cyan-Blue Accent */
   --color-kik-text: #F8FAFC;
@@ -29,7 +29,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #05070D;
+  background: #08080A;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -44,12 +44,12 @@ body {
 /* Custom Utilities */
 @layer utilities {
   .glass-nav {
-    background-color: rgba(5, 7, 13, 0.6);
+    background-color: rgba(8, 8, 10, 0.6);
     backdrop-filter: blur(24px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
   .sidebar-glass {
-    background-color: rgba(5, 7, 13, 0.6);
+    background-color: rgba(8, 8, 10, 0.65);
     backdrop-filter: blur(32px);
     border-right: 1px solid rgba(255, 255, 255, 0.05);
   }

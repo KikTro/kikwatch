@@ -59,9 +59,13 @@ export default function AppLayoutWrapper({ children }: { children: React.ReactNo
           
           {/* A. Fixed Left-Sidebar Navigation Rail (Desktop with Collapse state) */}
           <aside 
-            className={`hidden md:flex flex-col justify-between fixed top-0 left-0 bottom-0 z-40 sidebar-glass transition-all duration-300 ease-in-out ${
+            className={`hidden md:flex flex-col justify-between fixed top-0 left-0 bottom-0 z-40 sidebar-glass transition-all ${
               isCollapsed ? 'w-20 p-4' : 'w-64 lg:w-72 p-6'
             }`}
+            style={{
+              transitionDuration: '550ms',
+              transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+            }}
           >
             {/* Logo area */}
             <div className="flex flex-col gap-8">
@@ -228,18 +232,22 @@ export default function AppLayoutWrapper({ children }: { children: React.ReactNo
 
           {/* D. Main Content Layout (scrolling independently and padded for Sidebar offset) */}
           <div 
-            className={`flex-grow min-h-screen min-w-0 relative flex flex-col pt-16 md:pt-0 transition-all duration-300 ease-in-out overflow-x-hidden ${
+            className={`flex-grow min-h-screen min-w-0 relative flex flex-col pt-16 md:pt-0 transition-all overflow-x-hidden ${
               isCollapsed ? 'md:pl-20' : 'md:pl-64 lg:pl-72'
             }`}
+            style={{
+              transitionDuration: '550ms',
+              transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+            }}
           >
             {/* VERY SMOOTH PAGE TRANSITIONS */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={pathname}
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.35, ease: 'easeOut' }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                 className="flex-1 flex flex-col"
               >
                 {children}
