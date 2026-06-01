@@ -65,24 +65,29 @@ export default function AppLayoutWrapper({ children }: { children: React.ReactNo
           >
             {/* Logo area */}
             <div className="flex flex-col gap-8">
-              <Link 
-                href="/" 
-                className={`text-2xl font-bold tracking-tighter text-white select-none pt-2 flex ${
-                  isCollapsed ? 'justify-center' : 'pl-3'
-                }`}
-              >
-                {isCollapsed ? (
-                  <span className="flex items-center">K<span className="text-[var(--color-kik-accent)]">W</span></span>
-                ) : (
-                  <span>Kik<span className="text-[var(--color-kik-accent)]">Watch</span></span>
+              <div className={`flex flex-col select-none pt-2 ${isCollapsed ? 'items-center' : 'pl-3'}`}>
+                <Link 
+                  href="/" 
+                  className="text-2xl font-bold tracking-tighter text-white leading-none"
+                >
+                  {isCollapsed ? (
+                    <span className="flex items-center">K<span className="text-[var(--color-kik-accent)]">W</span></span>
+                  ) : (
+                    <span>Kik<span className="text-[var(--color-kik-accent)]">Watch</span></span>
+                  )}
+                </Link>
+                {!isCollapsed && (
+                  <span className="text-[9px] text-gray-500 font-semibold tracking-wider mt-1 hover:text-gray-400 transition-colors uppercase">
+                    by krishnendu @ KikTro
+                  </span>
                 )}
-              </Link>
+              </div>
 
               {/* Big Collapse Button (Top of all navigation links) */}
               <div className={`flex ${isCollapsed ? 'justify-center' : 'pl-3 pr-3'}`}>
                 <button
                   onClick={() => setIsCollapsed(!isCollapsed)}
-                  className={`flex items-center justify-center rounded-xl bg-blue-600 hover:bg-blue-750 text-white shadow-lg shadow-blue-500/25 cursor-pointer hover:scale-105 transition-all duration-300 ${
+                  className={`flex items-center justify-center rounded-xl bg-blue-600 hover:bg-blue-700 text-white shadow-lg cursor-pointer hover:scale-105 transition-all duration-300 ${
                     isCollapsed ? 'w-12 h-12' : 'w-full py-2.5 px-4 gap-3'
                   }`}
                   title={isCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
@@ -100,7 +105,7 @@ export default function AppLayoutWrapper({ children }: { children: React.ReactNo
                   
                   return (
                     <Link
-                      key={link.name}
+                       key={link.name}
                       href={link.path}
                       className={`relative flex items-center rounded-xl text-sm font-semibold transition-all duration-300 group cursor-pointer ${
                         isCollapsed ? 'justify-center p-3' : 'gap-4 px-4 py-3'
@@ -115,7 +120,7 @@ export default function AppLayoutWrapper({ children }: { children: React.ReactNo
                       {isActive && (
                         <motion.div
                           layoutId="active-nav-pill"
-                          className="absolute inset-0 bg-blue-600/15 border border-blue-500/30 rounded-xl royal-glow -z-10"
+                          className="absolute inset-0 bg-blue-600/10 border border-blue-500/20 rounded-xl -z-10"
                           transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                         />
                       )}
@@ -157,9 +162,14 @@ export default function AppLayoutWrapper({ children }: { children: React.ReactNo
                 >
                   <div className="flex flex-col gap-8">
                     <div className="flex items-center justify-between">
-                      <Link href="/" className="text-2xl font-bold tracking-tighter text-white pl-2">
-                        Kik<span className="text-[var(--color-kik-accent)]">Watch</span>
-                      </Link>
+                      <div className="flex flex-col pl-2 select-none">
+                        <Link href="/" className="text-2xl font-bold tracking-tighter text-white leading-none">
+                          Kik<span className="text-[var(--color-kik-accent)]">Watch</span>
+                        </Link>
+                        <span className="text-[9px] text-gray-500 font-semibold tracking-wider mt-1 uppercase">
+                          by krishnendu @ KikTro
+                        </span>
+                      </div>
                       <button 
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-gray-400 hover:text-white cursor-pointer"
@@ -203,9 +213,14 @@ export default function AppLayoutWrapper({ children }: { children: React.ReactNo
             >
               <Menu className="w-6 h-6" />
             </button>
-            <Link href="/" className="text-xl font-bold tracking-tighter text-white">
-              Kik<span className="text-[var(--color-kik-accent)]">Watch</span>
-            </Link>
+            <div className="flex flex-col items-center select-none">
+              <Link href="/" className="text-xl font-bold tracking-tighter text-white leading-none">
+                Kik<span className="text-[var(--color-kik-accent)]">Watch</span>
+              </Link>
+              <span className="text-[8px] text-gray-400 font-semibold tracking-wider mt-0.5 uppercase">
+                by krishnendu @ KikTro
+              </span>
+            </div>
             <Link href="/search" className="text-white hover:text-gray-300 p-2">
               <Search className="w-5 h-5" />
             </Link>

@@ -58,11 +58,8 @@ body {
     backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.05);
   }
-  .text-glow {
-    text-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
-  }
-  .royal-glow {
-    box-shadow: 0 0 30px rgba(37, 99, 235, 0.15);
+  .apple-shadow {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   }
 }
 

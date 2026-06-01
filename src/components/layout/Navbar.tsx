@@ -35,9 +35,14 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
         <div className="flex items-center gap-8">
-          <Link href="/" className="text-2xl font-bold tracking-tighter text-white">
-            Kik<span className="text-[var(--color-kik-accent)]">Watch</span>
-          </Link>
+          <div className="flex flex-col select-none">
+            <Link href="/" className="text-2xl font-bold tracking-tighter text-white leading-none">
+              Kik<span className="text-[var(--color-kik-accent)]">Watch</span>
+            </Link>
+            <span className="text-[9px] text-gray-500 font-semibold tracking-wider mt-1 uppercase">
+              by krishnendu @ KikTro
+            </span>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">

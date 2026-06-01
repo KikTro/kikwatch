@@ -43,11 +43,6 @@ export default async function MoviePage({ params }: { params: Promise<{ id: stri
         {/* Top Section: Centered Cinematic Player */}
         <div className="w-full max-w-5xl mx-auto mb-8 relative z-10">
           <VidKingPlayer movie={movie} />
-          
-          {/* Ambient Background Glow centered below player */}
-          <div 
-            className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full h-[60%] bg-blue-600/10 blur-[130px] -z-10 rounded-full pointer-events-none"
-          />
         </div>
 
         {/* Bottom Section: Spacious details flowing beautifully under player */}
@@ -55,11 +50,21 @@ export default async function MoviePage({ params }: { params: Promise<{ id: stri
           
           {/* Main heading row with poster and specs */}
           <div className="flex flex-col md:flex-row gap-6 md:items-start border-b border-white/5 pb-8">
-            <img 
-              src={getImageUrl(movie.poster_path, 'w500')} 
-              alt={title} 
-              className="w-36 h-52 object-cover rounded-xl shadow-2xl border border-white/10 flex-shrink-0 self-center md:self-start royal-glow"
-            />
+            {/* Apple TV-style Content-Aware Ambient Shadow on Detail Page */}
+            <div className="relative w-36 h-52 flex-shrink-0 self-center md:self-start select-none group">
+              <div className="absolute inset-x-2 bottom-[-14px] top-4 -z-10 opacity-60 blur-xl pointer-events-none">
+                <img 
+                  src={getImageUrl(movie.poster_path, 'w500')} 
+                  alt="" 
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </div>
+              <img 
+                src={getImageUrl(movie.poster_path, 'w500')} 
+                alt={title} 
+                className="w-full h-full object-cover rounded-2xl border border-white/10 shadow-2xl relative"
+              />
+            </div>
             
             <div className="flex-1 flex flex-col justify-center text-center md:text-left pt-1">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-2 leading-tight select-text">
@@ -106,7 +111,7 @@ export default async function MoviePage({ params }: { params: Promise<{ id: stri
             </div>
 
             {/* Technical card */}
-            <div className="bg-white/5 rounded-2xl border border-white/5 p-5 flex flex-col gap-4 text-xs royal-glow">
+            <div className="bg-white/[0.03] backdrop-blur-md rounded-2xl border border-white/5 p-5 flex flex-col gap-4 text-xs shadow-2xl">
               <div className="flex flex-col gap-1 border-b border-white/5 pb-3">
                 <span className="text-gray-500 font-bold uppercase tracking-wider flex items-center gap-1.5"><Film className="w-3.5 h-3.5" /> Director</span>
                 <span className="text-white font-semibold text-sm truncate" title={directorNames}>{directorNames}</span>
@@ -138,7 +143,7 @@ export default async function MoviePage({ params }: { params: Promise<{ id: stri
                     <img 
                       src={actor.profile_path ? getImageUrl(actor.profile_path, 'w500') : 'https://via.placeholder.com/150?text=No+Photo'}
                       alt={actor.name}
-                      className="w-16 h-16 object-cover rounded-full border border-white/10 mb-3 royal-glow"
+                      className="w-16 h-16 object-cover rounded-full border border-white/10 mb-3 shadow-md"
                     />
                     <span className="text-white font-bold text-xs line-clamp-1">{actor.name}</span>
                     <span className="text-gray-400 text-[10px] line-clamp-1 mt-1">{actor.character}</span>

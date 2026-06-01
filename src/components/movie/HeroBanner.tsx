@@ -65,7 +65,7 @@ export default function HeroBanner({ movie }: { movie: Movie }) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }}
-            className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-4 leading-tight text-glow select-text"
+            className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-4 leading-tight select-text"
           >
             {title}
           </motion.h1>

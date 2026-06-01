@@ -34,7 +34,7 @@ export default function ContentRow({ title, movies }: { title: string; movies: M
 
         <div
           ref={rowRef}
-          className="flex gap-4 md:gap-6 overflow-x-auto px-4 md:px-8 scrollbar-hide snap-x pb-8"
+          className="flex gap-4 md:gap-6 overflow-x-auto px-4 md:px-8 scrollbar-hide snap-x pb-12 pt-2 -mt-2"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {movies.map((movie) => (
