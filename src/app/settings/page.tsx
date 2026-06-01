@@ -98,96 +98,7 @@ export default function SettingsPage() {
 
         <div className="flex flex-col gap-8">
           
-          {/* 1. Support Us & Buy Me A Coffee (High-End Premium Card) */}
-          <section className="bg-gradient-to-br from-purple-950/40 via-indigo-950/30 to-black/20 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden group transition-all duration-500 hover:border-white/20">
-            {/* Shimmer Ambient Gradient behind */}
-            <div className="absolute -top-1/4 -right-1/4 w-80 h-80 bg-purple-600/10 rounded-full blur-[100px] pointer-events-none group-hover:bg-purple-600/15 transition-all duration-700 animate-pulse" />
-            
-            <h2 className="text-xl font-black text-white mb-4 flex items-center gap-2.5 tracking-tight">
-              <Heart className="w-5.5 h-5.5 text-red-500 fill-red-500 animate-pulse" /> Support KikWatch
-            </h2>
-            
-            <p className="text-sm text-white/70 leading-relaxed max-w-xl mb-6">
-              Enjoying free cinematic streaming with zero ads and zero subscriptions? Support our platform to keep the servers alive, blazing fast, and forever free. Every coffee counts!
-            </p>
-
-            <div className="flex flex-col md:flex-row gap-8 items-center border-t border-white/5 pt-6 mt-2">
-              {/* Refined CSS Mock UPI QR Code (Apple Design Aesthetics) */}
-              <div className="relative w-40 h-40 bg-white p-3.5 rounded-2xl shadow-xl flex-shrink-0 flex items-center justify-center border border-white/10 select-none">
-                {/* Mock QR Alignment squares */}
-                <div className="absolute top-3.5 left-3.5 w-7 h-7 border-[3px] border-black rounded-md flex items-center justify-center">
-                  <div className="w-2.5 h-2.5 bg-black rounded-[2px]" />
-                </div>
-                <div className="absolute top-3.5 right-3.5 w-7 h-7 border-[3px] border-black rounded-md flex items-center justify-center">
-                  <div className="w-2.5 h-2.5 bg-black rounded-[2px]" />
-                </div>
-                <div className="absolute bottom-3.5 left-3.5 w-7 h-7 border-[3px] border-black rounded-md flex items-center justify-center">
-                  <div className="w-2.5 h-2.5 bg-black rounded-[2px]" />
-                </div>
-                
-                {/* Visual mesh array representing QR matrix */}
-                <div className="w-full h-full flex flex-col justify-between pt-8 pl-8 pr-1 pb-1">
-                  <div className="flex justify-between w-full h-2.5">
-                    <div className="w-4 bg-black h-1 rounded" />
-                    <div className="w-3 bg-black h-1 rounded" />
-                    <div className="w-1.5 bg-black h-1 rounded" />
-                  </div>
-                  <div className="flex justify-between w-full h-2.5">
-                    <div className="w-2 bg-black h-1 rounded" />
-                    <div className="w-6 bg-black h-1 rounded" />
-                  </div>
-                  <div className="flex justify-between w-full h-2.5">
-                    <div className="w-5 bg-black h-1 rounded" />
-                    <div className="w-2 bg-black h-1 rounded" />
-                    <div className="w-3 bg-black h-1 rounded" />
-                  </div>
-                  <div className="flex justify-between w-full h-2.5">
-                    <div className="w-3 bg-black h-1 rounded" />
-                    <div className="w-4 bg-black h-1 rounded" />
-                  </div>
-                  <div className="flex justify-between w-full h-2.5">
-                    <div className="w-1.5 bg-black h-1 rounded" />
-                    <div className="w-2 bg-black h-1 rounded" />
-                    <div className="w-5 bg-black h-1 rounded" />
-                  </div>
-                </div>
-
-                {/* Center UPI Logo Icon */}
-                <div className="absolute inset-0 m-auto w-10 h-10 bg-black text-white text-[9px] font-black rounded-xl border border-white/20 flex items-center justify-center tracking-tight shadow-md uppercase">
-                  UPI
-                </div>
-              </div>
-
-              {/* UPI ID copy and payment information */}
-              <div className="flex-1 flex flex-col gap-4 w-full">
-                <div className="flex flex-col gap-1.5">
-                  <span className="text-xs font-bold text-white/50 uppercase tracking-widest">Pay via any UPI App</span>
-                  <span className="text-sm font-semibold text-white/80">Scan the QR or copy the UPI ID below to pay directly from GPay, PhonePe, Paytm, or BHIM.</span>
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-3 mt-1">
-                  <div className="flex-grow flex items-center justify-between bg-black/40 border border-white/10 px-4 py-3 rounded-xl select-text">
-                    <span className="font-mono text-sm font-bold text-white tracking-wider select-all">kiktrolabs@ybl</span>
-                    <button 
-                      onClick={handleCopyUPI}
-                      className="text-white/60 hover:text-white transition-colors ml-2 p-1 hover:scale-105 transition-all cursor-pointer"
-                      title="Copy UPI ID"
-                    >
-                      <Copy className="w-4 h-4" />
-                    </button>
-                  </div>
-                  <button 
-                    onClick={handleCopyUPI}
-                    className="px-6 py-3 bg-white text-black hover:bg-white/90 active:scale-95 text-xs font-black rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer self-stretch sm:self-auto uppercase tracking-widest"
-                  >
-                    Copy UPI ID
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* 2. Subtitle Configuration */}
+          {/* 1. Subtitle Configuration */}
           <section className="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-6 shadow-2xl transition-all duration-300 hover:border-white/20">
             <h2 className="text-lg font-bold text-white mb-6 flex items-center gap-2.5">
               <Languages className="w-5 h-5 text-white" /> Captions & Subtitles
@@ -248,7 +159,7 @@ export default function SettingsPage() {
             </div>
           </section>
 
-          {/* 3. Privacy & Storage Management */}
+          {/* 2. Privacy & Storage Management */}
           <section className="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-6 shadow-2xl transition-all duration-300 hover:border-white/20">
             <h2 className="text-lg font-bold text-white mb-6 flex items-center gap-2.5">
               <Sliders className="w-5 h-5 text-white" /> Cache & Storage
@@ -279,6 +190,58 @@ export default function SettingsPage() {
                 >
                   <Trash2 className="w-4 h-4" /> Reset Watchlist
                 </button>
+              </div>
+            </div>
+          </section>
+
+          {/* 3. Support Us & Buy Me A Coffee (High-End Premium Card shifted to the bottom) */}
+          <section className="bg-gradient-to-br from-purple-950/40 via-indigo-950/30 to-black/20 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden group transition-all duration-500 hover:border-white/20">
+            {/* Shimmer Ambient Gradient behind */}
+            <div className="absolute -top-1/4 -right-1/4 w-80 h-80 bg-purple-600/10 rounded-full blur-[100px] pointer-events-none group-hover:bg-purple-600/15 transition-all duration-700 animate-pulse" />
+            
+            <h2 className="text-xl font-black text-white mb-4 flex items-center gap-2.5 tracking-tight">
+              <Heart className="w-5.5 h-5.5 text-red-500 fill-red-500 animate-pulse" /> Support KikWatch
+            </h2>
+            
+            <p className="text-sm text-white/70 leading-relaxed max-w-xl mb-6">
+              Enjoying free cinematic streaming with zero ads and zero subscriptions? Support our platform to keep the servers alive, blazing fast, and forever free. Every coffee counts!
+            </p>
+
+            <div className="flex flex-col md:flex-row gap-8 items-center border-t border-white/5 pt-6 mt-2">
+              {/* Payment QR Image (utilizing the newly added public/qr.jpg) */}
+              <div className="relative w-40 h-40 bg-white p-2 rounded-2xl shadow-xl flex-shrink-0 overflow-hidden border border-white/10 select-none flex items-center justify-center">
+                <img 
+                  src="/qr.jpg" 
+                  alt="UPI QR Code" 
+                  className="w-full h-full object-contain rounded-lg"
+                />
+              </div>
+
+              {/* UPI ID copy and payment information */}
+              <div className="flex-1 flex flex-col gap-4 w-full">
+                <div className="flex flex-col gap-1.5">
+                  <span className="text-xs font-bold text-white/50 uppercase tracking-widest">Pay via any UPI App</span>
+                  <span className="text-sm font-semibold text-white/80">Scan the QR or copy the UPI ID below to pay directly from GPay, PhonePe, Paytm, or BHIM.</span>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-3 mt-1">
+                  <div className="flex-grow flex items-center justify-between bg-black/40 border border-white/10 px-4 py-3 rounded-xl select-text">
+                    <span className="font-mono text-sm font-bold text-white tracking-wider select-all">kiktrolabs@ybl</span>
+                    <button 
+                      onClick={handleCopyUPI}
+                      className="text-white/60 hover:text-white transition-colors ml-2 p-1 hover:scale-105 transition-all cursor-pointer"
+                      title="Copy UPI ID"
+                    >
+                      <Copy className="w-4 h-4" />
+                    </button>
+                  </div>
+                  <button 
+                    onClick={handleCopyUPI}
+                    className="px-6 py-3 bg-white text-black hover:bg-white/90 active:scale-95 text-xs font-black rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer self-stretch sm:self-auto uppercase tracking-widest"
+                  >
+                    Copy UPI ID
+                  </button>
+                </div>
               </div>
             </div>
           </section>
